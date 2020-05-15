@@ -1,7 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Routes from "./routes";
-import { Button } from 'antd';
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import Routes from "routes";
 import Navigation from "component/Navigation";
 
 
