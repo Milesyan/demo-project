@@ -1,7 +1,8 @@
-import * as Koa from 'koa';
-import * as Router from 'koa-router';
-import * as logger from 'koa-logger';
-import * as json from 'koa-json';
+import Koa from 'koa';
+import Router from 'koa-router';
+import logger from 'koa-logger';
+import json from 'koa-json';
+import cors from '@koa/cors';
 
 const app = new Koa();
 const router = new Router();
@@ -13,6 +14,7 @@ router.get('/', async (ctx, next) => {
 
 app.use(json());
 app.use(logger());
+app.use(cors());
 
 app.use(router.routes()).use(router.allowedMethods());
 app.listen(3000, () => {
