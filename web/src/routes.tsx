@@ -4,8 +4,8 @@ import About from "./page/About";
 import Home from "./page/Home";
 
 const Routes = [
-    <Route path="/about" component={About} />,
-    <Route path="/" component={Home} />
+    <Route path="/about" component={About} key="about" />,
+    <Route path="/" component={Home} key="home"/>
 ]
 
 export default Routes;

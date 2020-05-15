@@ -5,18 +5,14 @@ import json from 'koa-json';
 import cors from '@koa/cors';
 
 const app = new Koa();
-const router = new Router();
+export const router = new Router();
 
-router.get('/', async (ctx, next) => {
-  ctx.body = { msg: 'Hello world!'};
-  await next()
-})
-
+require('./router/user');
 app.use(json());
 app.use(logger());
 app.use(cors());
 
 app.use(router.routes()).use(router.allowedMethods());
-app.listen(3000, () => {
-  console.log("started");
+app.listen(3001, () => {
+  console.log("started on: 3001");
 })
